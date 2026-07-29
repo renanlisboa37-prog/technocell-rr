@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Administrativo | TECHNOCELL R&R</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-login-page">
+  <main class="admin-login-shell">
+    <section class="admin-login-card">
+      <a class="brand admin-brand" href="../index.html"><span class="brand-mark">TR</span><span class="brand-text"><strong>TECHNOCELL</strong><small>R&R</small></span></a>
+      <span class="admin-kicker">ÁREA RESTRITA</span>
+      <h1>Acesso administrativo</h1>
+      <p>Entre para gerenciar preços, serviços e estoque.</p>
+      <form id="adminLoginForm">
+        <label>Usuário<input id="adminUser" type="text" autocomplete="username" required></label>
+        <label>Senha<input id="adminPassword" type="password" autocomplete="current-password" required></label>
+        <button class="btn btn-primary full-btn" type="submit">Entrar</button>
+        <p id="loginError" class="login-error" aria-live="polite"></p>
+      </form>
+      <a class="back-admin-link" href="../index.html">← Voltar ao site</a>
+    </section>
+  </main>
+  <script src="../assets/js/admin-login.js"></script>
+</body>
+</html>

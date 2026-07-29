@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel Administrativo | TECHNOCELL R&R</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body class="admin-page">
+  <aside class="admin-sidebar">
+    <a class="brand" href="dashboard.html"><span class="brand-mark">TR</span><span class="brand-text"><strong>TECHNOCELL</strong><small>R&R</small></span></a>
+    <nav>
+      <button class="admin-nav active" data-section="overview">Dashboard</button>
+      <button class="admin-nav" data-section="prices">Preços e serviços</button>
+      <button class="admin-nav" data-section="stock">Estoque</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="../index.html">Ver site</a>
+      <button id="logoutBtn">Sair</button>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div><span class="admin-kicker">PAINEL ADMINISTRATIVO</span><h1 id="sectionTitle">Dashboard</h1></div>
+      <div class="admin-user"><span>Administrador</span><strong>Renan</strong></div>
+    </header>
+
+    <section id="overview" class="admin-section active">
+      <div class="stat-grid">
+        <article><span>Serviços cadastrados</span><strong id="serviceCount">0</strong></article>
+        <article><span>Itens em estoque</span><strong id="stockCount">0</strong></article>
+        <article><span>Valor do estoque</span><strong id="stockValue">R$ 0,00</strong></article>
+        <article><span>Estoque baixo</span><strong id="lowStockCount">0</strong></article>
+      </div>
+      <div class="admin-panel">
+        <div class="panel-heading"><div><span>RESUMO</span><h2>Itens com estoque baixo</h2></div></div>
+        <div id="lowStockList" class="simple-list"></div>
+      </div>
+    </section>
+
+    <section id="prices" class="admin-section">
+      <div class="admin-panel">
+        <div class="panel-heading"><div><span>CATÁLOGO</span><h2>Preços e serviços</h2></div><button id="newServiceBtn" class="btn btn-primary">Adicionar serviço</button></div>
+        <div class="table-wrap">
+          <table><thead><tr><th>Equipamento</th><th>Serviço</th><th>Preço</th><th>Ações</th></tr></thead><tbody id="serviceTableBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+
+    <section id="stock" class="admin-section">
+      <div class="admin-panel">
+        <div class="panel-heading"><div><span>CONTROLE</span><h2>Estoque de peças</h2></div><button id="newStockBtn" class="btn btn-primary">Adicionar item</button></div>
+        <div class="table-wrap">
+          <table><thead><tr><th>Peça</th><th>Categoria</th><th>Quantidade</th><th>Custo</th><th>Ações</th></tr></thead><tbody id="stockTableBody"></tbody></table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="serviceDialog" class="admin-dialog">
+    <form id="serviceForm" method="dialog">
+      <div class="dialog-head"><h2 id="serviceDialogTitle">Adicionar serviço</h2><button type="button" data-close="serviceDialog">×</button></div>
+      <input id="serviceId" type="hidden">
+      <label>Equipamento<select id="serviceEquipment" required><option>Celular</option><option>Notebook</option><option>Desktop</option></select></label>
+      <label>Nome do serviço<input id="serviceName" required></label>
+      <label>Preço<input id="servicePrice" type="number" min="0" step="0.01" required></label>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close="serviceDialog">Cancelar</button><button class="btn btn-primary" type="submit">Salvar</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="stockDialog" class="admin-dialog">
+    <form id="stockForm" method="dialog">
+      <div class="dialog-head"><h2 id="stockDialogTitle">Adicionar item</h2><button type="button" data-close="stockDialog">×</button></div>
+      <input id="stockId" type="hidden">
+      <label>Nome da peça<input id="stockName" required></label>
+      <label>Categoria<select id="stockCategory" required><option>Celular</option><option>Notebook</option><option>Desktop</option><option>Geral</option></select></label>
+      <label>Quantidade<input id="stockQuantity" type="number" min="0" step="1" required></label>
+      <label>Custo unitário<input id="stockCost" type="number" min="0" step="0.01" required></label>
+      <div class="dialog-actions"><button type="button" class="btn btn-secondary" data-close="stockDialog">Cancelar</button><button class="btn btn-primary" type="submit">Salvar</button></div>
+    </form>
+  </dialog>
+
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
