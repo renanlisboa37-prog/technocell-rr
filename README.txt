@@ -2,8 +2,7 @@ TECHNOCELL R&R - Versão 2
 
 1. Abra index.html para acessar o site público.
 2. Para o painel administrativo, abra admin/login.html.
-3. Usuário inicial: Renan
-4. Senha inicial: 121408
+
 
 Recursos do painel:
 - Adicionar, editar e excluir serviços e preços.
