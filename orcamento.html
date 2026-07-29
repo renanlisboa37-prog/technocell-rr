@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pré-Orçamento | TECHNOCELL R&R</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="quote-page">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html"><span class="brand-mark">TR</span><span class="brand-text"><strong>TECHNOCELL</strong><small>R&R</small></span></a>
+      <a class="back-link" href="index.html">← Voltar ao site</a>
+    </div>
+  </header>
+
+  <main class="quote-main">
+    <div class="container quote-layout">
+      <section class="quote-card">
+        <div class="progress-head"><span id="stepLabel">Etapa 1 de 4</span><strong id="progressPercent">25%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+
+        <form id="quoteForm">
+          <div class="form-step active" data-step="1">
+            <span class="eyebrow dark">PRÉ-ORÇAMENTO ONLINE</span>
+            <h1>Qual equipamento você precisa reparar?</h1>
+            <div class="equipment-grid">
+              <label class="equipment-option"><input type="radio" name="equipment" value="Celular"><span>📱</span><strong>Celular</strong></label>
+              <label class="equipment-option"><input type="radio" name="equipment" value="Notebook"><span>💻</span><strong>Notebook</strong></label>
+              <label class="equipment-option"><input type="radio" name="equipment" value="Desktop"><span>🖥️</span><strong>Desktop</strong></label>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <span class="eyebrow dark">DETALHES DO EQUIPAMENTO</span>
+            <h2>Conte um pouco mais</h2>
+            <div class="field-grid">
+              <label>Marca<input id="brand" type="text" placeholder="Ex.: Samsung, Dell, Apple"></label>
+              <label>Modelo<input id="model" type="text" placeholder="Ex.: Galaxy S23, Inspiron 15"></label>
+              <label class="full">Serviço<select id="service"><option value="">Selecione</option></select></label>
+              <label class="full">Descreva o problema<textarea id="problem" rows="5" placeholder="Explique o que está acontecendo..."></textarea></label>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <span class="eyebrow dark">SEUS DADOS</span>
+            <h2>Como podemos falar com você?</h2>
+            <div class="field-grid">
+              <label>Nome<input id="name" type="text" placeholder="Seu nome"></label>
+              <label>WhatsApp<input id="phone" type="tel" placeholder="(31) 99999-9999"></label>
+              <label class="full">E-mail<input id="email" type="email" placeholder="seuemail@exemplo.com"></label>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="4">
+            <span class="eyebrow dark">RESULTADO</span>
+            <h2>Seu pré-orçamento está pronto</h2>
+            <div class="result-box">
+              <div><span>Equipamento</span><strong id="resultEquipment">—</strong></div>
+              <div><span>Serviço</span><strong id="resultService">—</strong></div>
+              <div><span>Valor estimado</span><strong id="resultPrice">R$ 0,00</strong></div>
+              <p>Este valor é uma estimativa inicial e poderá ser ajustado após análise técnica.</p>
+            </div>
+            <a id="whatsappResult" class="btn btn-primary full-btn" target="_blank" rel="noopener">Enviar solicitação pelo WhatsApp</a>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-secondary" id="prevBtn">Voltar</button>
+            <button type="button" class="btn btn-primary" id="nextBtn">Continuar</button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="quote-summary">
+        <span>SEU ORÇAMENTO</span>
+        <h3>Resumo</h3>
+        <div><small>Equipamento</small><strong id="summaryEquipment">Não selecionado</strong></div>
+        <div><small>Serviço</small><strong id="summaryService">Não selecionado</strong></div>
+        <div class="summary-total"><small>Estimativa</small><strong id="summaryPrice">R$ 0,00</strong></div>
+        <p>Atendimento sujeito à disponibilidade e confirmação técnica.</p>
+      </aside>
+    </div>
+  </main>
+  <script src="assets/js/orcamento.js"></script>
+</body>
+</html>
