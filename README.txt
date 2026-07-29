@@ -12,3 +12,4 @@ Recursos do painel:
 
 IMPORTANTE:
 Esta versão usa somente HTML, CSS, JavaScript e localStorage. É adequada para testes locais, mas não oferece segurança real para publicação na internet, pois as credenciais ficam no código. Para uso público, será necessário backend, banco de dados e autenticação segura.
+Novo teste de publicação
